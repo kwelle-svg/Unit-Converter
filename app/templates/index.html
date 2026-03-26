@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    <a href="/length" {% if values[0]=='mm' %}class="button"{% endif %}>length</a>
+    <a href="/weight" {% if values[0]=='mg' %}class="button"{% endif %}>weight</a>
+    <a href="/temperature" {% if values[0]=='Celsius' %}class="button"{% endif %}>temperature</a>
+    <form action="/postdata" method="POST">
+        <h3>Put number here</h3>
+        <input type="text" name="number"><br>
+        <select name="convert_from">
+            {% for value in values %}
+                <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select>
+        <select name="convert_to">
+            {% for value in values %}
+                <option value="{{ value }}">{{ value }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="submit"><br>
+    </form>
+    {% if final_number %}
+    <h5>{{ final_number }}</h5>
+    {% endif %}
+{% endblock %}
