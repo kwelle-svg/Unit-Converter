@@ -7,7 +7,7 @@ Unit-Converter that I maked for roadmap.sh project: https://roadmap.sh/projects/
 
 **Installation**
 ``` bash
-git clone https://github.com/kwelle-svg/Task-Tracker
+git clone https://github.com/kwelle-svg/Unit-Converter
 python -m venv .venv
 source .venv/bin/activate
 pip install -r req.txt
