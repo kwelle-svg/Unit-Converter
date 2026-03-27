@@ -21,9 +21,9 @@ async def root(request: Request):
 
 @app.post("/postdata")
 async def number_postdata(number = Form(), convert_to=Form(), convert_from=Form()):
-    return RedirectResponse(url=f"/{convert_length(float(number), convert_to=convert_to, convert_from=convert_from)}", status_code=status.HTTP_303_SEE_OTHER)
+    return RedirectResponse(url=f"/{convert_unit(float(number), convert_to=convert_to, convert_from=convert_from)}", status_code=status.HTTP_303_SEE_OTHER)
 
-def convert_length(numb: int,
+def convert_unit(numb: int,
     convert_from, convert_to) -> str:
     if convert_from in length.length:
         path = "length"
